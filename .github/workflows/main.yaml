@@ -8,10 +8,11 @@ jobs:
     container: python
     steps:
       - uses: actions/checkout@v2
-      - name: Sanity Check
+      - name: SanityCheck
         run: |
           pip install -r requirements.txt
           pip install -r test-requirements.txt
+          export PYTHONPATH=".:src/"
           pytest test/test_sanity.py
   TestHello:
     runs-on: ubuntu-latest
@@ -22,6 +23,7 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install -r test-requirements.txt
+          export PYTHONPATH=".:src/"
           pytest test/test_hello.py
   TestGoodbye:
     runs-on: ubuntu-latest
@@ -32,4 +34,15 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install -r test-requirements.txt
+          export PYTHONPATH=".:src/"
           pytest test/test_goodbye.py
+  RunAllTests:
+    runs-on: ubuntu-latest
+    container: python
+    steps:
+      - uses: actions/checkout@v2
+      - name: RunAllTests
+        run: |
+          pip install -r requirements.txt
+          pip install -r test-requirements.txt
+          pytest
