@@ -34,3 +34,45 @@ The .github/workflows directory contains the different workflows that we want to
 ## Requirements
 
 The requirements.txt file and requirements-test.txt file contain the required packages for the code and tests respectively.
+
+## Testing Locally
+
+To run all tests locally, make sure pytest is installed. Then, run
+```bash
+pytest
+```
+in the root directory.
+
+To run a single test, make sure pytest is installed. Them, run
+```bash
+export PYTHONPATH=".:src/"
+pytest test/test_file_you_want_to_run.py
+```
+
+The export statement may differ on windows:
+```bash
+export PYTHONPATH=".;src/"
+````
+
+## Testing On GitHub Actions
+
+To view the tests that have run and their logs,
+
+1. Go to your GitHub Repository
+2. Click on Actions
+3. View the most recent run of your workflow or manually run your workflow
+
+To add a new test to the main.yaml file, add a new job with the following format
+```yaml
+  Your_Job_Name:
+    runs-on: ubuntu-latest
+    container: python
+    steps:
+      - uses: actions/checkout@v2
+      - name: Your_Step_Name
+        run: |
+          pip install -r requirements.txt
+          pip install -r test-requirements.txt
+          export PYTHONPATH=".:src/"
+          pytest test/test_file_you_want_to_run.py
+``` 
