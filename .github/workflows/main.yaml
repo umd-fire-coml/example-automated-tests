@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Sanity Check
-      - run: |
+        run: |
           pip install -r requirements.txt
           pip install -r test-requirements.txt
           pytest test_sanity.py
@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: TestHello
-      - run: |
+        run: |
           pip install -r requirements.txt
           pip install -r test-requirements.txt
           pytest test_hello.py
@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: TestGoodbye
-      - run: |
+        run: |
           pip install -r requirements.txt
           pip install -r test-requirements.txt
           pytest test_goodbye.py
