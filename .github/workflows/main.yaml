@@ -1,0 +1,35 @@
+name: CI
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  TestSanity:
+    runs-on: ubuntu-latest
+    container: python
+    steps:
+      - uses: actions/checkout@v2
+      - name: Sanity Check
+      - run: |
+          pip install -r requirements.txt
+          pip install -r test-requirements.txt
+          pytest test_sanity.py
+  TestHello:
+    runs-on: ubuntu-latest
+    container: python
+    steps:
+      - uses: actions/checkout@v2
+      - name: TestHello
+      - run: |
+          pip install -r requirements.txt
+          pip install -r test-requirements.txt
+          pytest test_hello.py
+  TestGoodbye:
+    runs-on: ubuntu-latest
+    container: python
+    steps:
+      - uses: actions/checkout@v2
+      - name: TestGoodbye
+      - run: |
+          pip install -r requirements.txt
+          pip install -r test-requirements.txt
+          pytest test_goodbye.py
