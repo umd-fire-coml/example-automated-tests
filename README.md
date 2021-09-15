@@ -1,5 +1,7 @@
 # Python Automated Testing Example
 
+![example workflow](https://github.com/sagars729/example-automated-tests/actions/workflows/main.yaml/badge.svg)
+
 This package contains the following files:
 
 ```bash
