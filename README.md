@@ -17,7 +17,6 @@ This package contains the following files:
 ├── .github
 │   ├── workflows
 │       ├── main.yaml
-├── conftest.py
 ├── requirements.txt
 ├── requirements-test.txt
 └── .gitignore
@@ -39,9 +38,6 @@ The notebooks directory contains an example interactive python notebook that use
 
 The .github/workflows directory contains the different workflows that we want to run using GitHub Actions. The main.yaml file runs all of our tests as separate jobs any time we push, create a pull request, or manually run on GitHub.
 
-## conftest.py File
-The conftest.py file is an empty file that allows pytest to find modules inside of the root directory. 
-
 ## Requirements
 
 The requirements.txt file and requirements-test.txt file contain the required packages for the code and tests respectively.
@@ -50,13 +46,13 @@ The requirements.txt file and requirements-test.txt file contain the required pa
 
 To run all tests locally, make sure pytest is installed. Then, run
 ```bash
-pytest
+python -m pytest
 ```
 in the root directory.
 
 To run a single test, make sure pytest is installed. Them, run
 ```bash
-pytest test/test_file_you_want_to_run.py
+python -m pytest test/test_file_you_want_to_run.py
 ```
 
 ## Testing On GitHub Actions
@@ -78,5 +74,5 @@ To add a new test to the main.yaml file, add a new job with the following format
         run: |
           pip install -r requirements.txt
           pip install -r test-requirements.txt
-          pytest test/test_file_you_want_to_run.py
+          python -m pytest test/test_file_you_want_to_run.py
 ``` 
