@@ -12,7 +12,7 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install -r test-requirements.txt
-          pytest test/test_sanity.py
+          python -m pytest test/test_sanity.py
   TestHello:
     runs-on: ubuntu-latest
     container: python
@@ -22,7 +22,7 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install -r test-requirements.txt
-          pytest test/test_hello.py
+          python -m pytest test/test_hello.py
   TestGoodbye:
     runs-on: ubuntu-latest
     container: python
@@ -32,7 +32,7 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install -r test-requirements.txt
-          pytest test/test_goodbye.py
+          python -m pytest test/test_goodbye.py
   RunAllTests:
     runs-on: ubuntu-latest
     container: python
@@ -42,4 +42,4 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install -r test-requirements.txt
-          pytest
+          python -m pytest
