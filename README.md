@@ -6,7 +6,6 @@ This package contains the following files:
 
 ```bash
 ├── src
-│   ├── conftest.py
 │   ├── hello.py
 │   ├── goodbye.py
 ├── test
@@ -16,7 +15,7 @@ This package contains the following files:
 ├── notebooks
 │   ├── Example.ipynb
 ├── .github
-│   ├── .workflows
+│   ├── workflows
 │       ├── main.yaml
 ├── requirements.txt
 ├── requirements-test.txt
@@ -25,7 +24,7 @@ This package contains the following files:
 
 ## Source Directory
 
-The src directory contains all the source code files for your project. In this example, there are two files - hello.py which contains the Hello class and goodbye.py which contains the Goodbye class. The conftest.py is an empty file that is created to allow pytest to find classes inside the src directory.
+The src directory contains all the source code files for your project. In this example, there are two files - hello.py which contains the Hello class and goodbye.py which contains the Goodbye class.
 
 ## Test Directory
 
@@ -53,14 +52,8 @@ in the root directory.
 
 To run a single test, make sure pytest is installed. Them, run
 ```bash
-export PYTHONPATH=".:src/"
 pytest test/test_file_you_want_to_run.py
 ```
-
-The export statement may differ on windows:
-```bash
-export PYTHONPATH=".;src/"
-````
 
 ## Testing On GitHub Actions
 
@@ -81,6 +74,5 @@ To add a new test to the main.yaml file, add a new job with the following format
         run: |
           pip install -r requirements.txt
           pip install -r test-requirements.txt
-          export PYTHONPATH=".:src/"
           pytest test/test_file_you_want_to_run.py
 ``` 
