@@ -1,6 +1,6 @@
 # Python Automated Testing Example
 
-![example workflow](https://github.com/sagars729/example-automated-tests/actions/workflows/main.yaml/badge.svg)
+![example workflow](https://github.com/umd-fire-coml/example-automated-tests/actions/workflows/main.yaml/badge.svg)
 
 This package contains the following files:
 
@@ -17,6 +17,7 @@ This package contains the following files:
 ├── .github
 │   ├── workflows
 │       ├── main.yaml
+├── conftest.py
 ├── requirements.txt
 ├── requirements-test.txt
 └── .gitignore
@@ -37,6 +38,9 @@ The notebooks directory contains an example interactive python notebook that use
 ## .github Directory
 
 The .github/workflows directory contains the different workflows that we want to run using GitHub Actions. The main.yaml file runs all of our tests as separate jobs any time we push, create a pull request, or manually run on GitHub.
+
+## conftest.py File
+The conftest.py file is an empty file that allows pytest to find modules inside of the root directory. 
 
 ## Requirements
 
