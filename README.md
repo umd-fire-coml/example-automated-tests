@@ -13,6 +13,8 @@ This package contains the following files:
 │   ├── test_sanity.py
 │   ├── test_hello.py
 │   ├── test_goodbye.py
+├── notebooks
+│   ├── Example.ipynb
 ├── .github
 │   ├── .workflows
 │       ├── main.yaml
@@ -28,6 +30,10 @@ The src directory contains all the source code files for your project. In this e
 ## Test Directory
 
 The test directory contains all the unit tests for our source code files (test_hello.py, test_goodbye.py) as well as a test_sanity.py that just makes sure our tests work as expected. 
+
+## Notebooks Directory
+
+The notebooks directory contains an example interactive python notebook that uses the source files.
 
 ## .github Directory
 
