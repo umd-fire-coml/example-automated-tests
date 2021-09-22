@@ -1,6 +1,6 @@
 # Python Automated Testing Example
 
-![example workflow](https://github.com/umd-fire-coml/example-automated-tests/actions/workflows/main.yaml/badge.svg)
+![example workflow](https://github.com/umd-fire-coml/example-automated-tests/actions/workflows/run_all_tests.yaml/badge.svg)
 
 This package contains the following files:
 
