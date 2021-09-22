@@ -8,7 +8,7 @@ jobs:
     container: python
     steps:
       - uses: actions/checkout@v2
-      - name: RunAllTests
+      - name: run_all_tests
         run: |
           pip install -r requirements.txt
           pip install -r test-requirements.txt
